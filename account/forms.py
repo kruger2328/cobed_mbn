@@ -1,4 +1,5 @@
 
+from logging import PlaceHolder
 from django import forms
 from django.forms.widgets import EmailInput, PasswordInput, Widget
 from .models import *
@@ -7,8 +8,8 @@ from django.contrib.auth.forms import UserCreationForm
 
 from django.core.validators import RegexValidator
 class UserForm(forms.ModelForm):
-   
-    username=forms.EmailField(label='Emailid',required=True,widget=forms.EmailInput)
+  # username=forms.EmailField(label='Emailid',required=True,widget=forms.EmailInput)
+    username=forms.CharField(help_text=None,label='Username',required=True)
     password1=forms.CharField(help_text=None,widget=PasswordInput,label='Password')
     password2=forms.CharField(help_text=None,widget=PasswordInput,label='Confirm Password')
     class Meta:
@@ -70,6 +71,18 @@ class Patient_RegisterForm(forms.ModelForm):
             )
         ]
     )
+    # name = forms.CharField(
+    #     min_length=0,
+    #     max_length=12,
+        
+    #     validators=[
+    #         RegexValidator(
+    #              '[a-z0-9]+@[a-z]+\.[a-z]{2,3}',
+    #             message="Email not valid"
+    #         )
+    #     ]
+    # )
+    name = forms.EmailField(label='Emailid',required=True,widget=forms.EmailInput)
     class Meta:
         model=Patient_Register
         fields=('name','phonenumber','adhar','pincode')
