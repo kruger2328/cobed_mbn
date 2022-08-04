@@ -181,6 +181,16 @@ class HomeProfileForm(forms.ModelForm):
         fields=('name','authority_type','authority_name','village','pincode','phonenumber',)
 
 class UserRegisterForm(forms.ModelForm):
+    adhar = forms.CharField(
+        min_length=12,
+        max_length=12,
+        validators=[
+            RegexValidator(
+                '[\d]{4}[\d]{4}[\d]{4}',
+                message="adhar not valid"
+            )
+        ]
+    )
     class Meta:
         model=UserRegister
         fields=('name','phonenumber','pincode','adhar')
