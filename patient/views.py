@@ -10,6 +10,7 @@ from django.contrib import messages
 from .forms import *
 import datetime
 from datetime import datetime, timedelta
+from account.forms import UpdateForm,UpdatePatientRegisterForm
 
 from datetime import date
 from center.models import *
@@ -119,7 +120,24 @@ def inproperdeath(request):
     d=Death.objects.filter(appruval=False).count()
     return render(request,'dmo/inproper.html',{'d':d})
 
+def update(request):
+    if request.method=="POST":
+        update_form=UpdateForm(request.POST,instance=request.user)
+        update_patient_form=UpdatePatientRegisterForm(request.POST,request.FILES,instance=request.user.patient_register)
+        if update_form.is_valid() and update_patient_form.is_valid():
+            update_form.save()
+            update_patient_form.save()
+            messages.success(request,f'Your Account has been Updated')
+            return redirect('dashboard')
+    else:
+        update_form=UpdateForm(instance=request.user)
+        update_patient_form=UpdatePatientRegisterForm(instance=request.user.patient_register)
 
+    context={
+        'update_form':update_form,
+        'update_patient_form':update_patient_form
+    }
+    return render(request,'account/update_patient_register.html',context)
 
 def chat_replay(request,id):
     Update = Chat.objects.get(id=id)
@@ -145,6 +163,25 @@ def dmo_view_complaint(request):
 def home_view_complaint(request):
     complaints=Complaint.objects.filter(home=request.user.home)
     return render(request,'patient/home_view_complaint.html',{'com':complaints})
+from account.forms import UpdateProfileForm 
+def update_profile_center(request):
+    if request.method=="POST":
+        update_form=UpdateForm(request.POST,instance=request.user)
+        
+        update_profile_form=UpdateProfileForm(request.POST,request.FILES,instance=request.user.center)
+        if update_form.is_valid() and update_profile_form.is_valid():
+            update_form.save()
+            update_profile_form.save()
+            messages.success(request,f'Your Account has been Updated')
+            return redirect('dashboard')
+    else:
+        update_form=UpdateForm(instance=request.user)
+        update_profile_form=UpdateProfileForm(instance=request.user.center)
+    context={
+        'update_form':update_form,
+        'update_profile_form':update_profile_form
+    }
+    return render(request,'account/update_profile.html',context)
 
 
 

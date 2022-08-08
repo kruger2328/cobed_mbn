@@ -22,8 +22,10 @@ urlpatterns=[
     path('dmo_view_complaint/',views.dmo_view_complaint,name='dmo_view_complaint'),
 
     path('home_view_complaint',views.home_view_complaint,name='home_view_complaint'),
+    path('update',views.update,name='update'),
 
     path('view_details',views.view_details,name='view_details'),
+    
 
     path('view_all_patients',views.view_all_patients,name='view_all_patients'),
 
