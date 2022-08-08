@@ -366,7 +366,7 @@
                                     <a href="#"><i class="lnr lnr-menu"></i>
                                         <span>Your Details</span></a>
                                         <ul class="sub-menu-list">
-                                            <li><a href="{% url 'view_details' %}">Click Here</a> </li>    
+                                            <li><a href="{% url 'patient:view_details' %}">Click Here</a> </li>    
 
                                             <!-- <li><a href="">Details</a> </li>     -->
                                         </ul>
@@ -376,8 +376,8 @@
                                     <a href="#"><i class="lnr lnr-menu"></i>
                                         <span>Chat </span></a>
                                         <ul class="sub-menu-list">
-                                            <li><a href="{% url 'patient_chat' %}">Chat With Doctor</a> </li>    
-                                            <li><a href="{% url 'view_patient_chat' %}">View My Chats</a> </li>    
+                                            <li><a href="{% url 'patient:chat' %}">Chat With Doctor</a> </li>    
+                                            <li><a href="{% url 'patient:chat_replay_view' %}">View My Chats</a> </li>    
 
                                             <!-- <li><a href="">Details</a> </li>     -->
                                         </ul>
@@ -388,8 +388,8 @@
                                     <a href="#"><i class="lnr lnr-cog"></i>
                                         <span>Complaint Box</span></a>
                                         <ul class="sub-menu-list">
-                                            <li><a href="{% url 'complaint' %}">Add Complaint</a> </li>
-                                            <li><a href="{% url 'com_replay_view' %}">Complaint Replay View</a></li>
+                                            <li><a href="{% url 'patient:complaint' %}">Add Complaint</a> </li>
+                                            <li><a href="{% url 'patient:com_replay_view' %}">Complaint Replay View</a></li>
                                         </ul>
                                 </li>
 
@@ -397,8 +397,8 @@
                                     <a href="#"><i class="lnr lnr-cog"></i>
                                         <span>Chat Box</span></a>
                                         <ul class="sub-menu-list">
-                                            <li><a href="{% url 'chat' %}">Chat with Doctor</a> </li>
-                                            <li><a href="{% url 'chat_replay_view' %}"> Replay View</a></li>
+                                            <li><a href="{% url 'patient:chat' %}">Chat with Doctor</a> </li>
+                                            <li><a href="{% url 'patient:chat_replay_view' %}"> Replay View</a></li>
                                         </ul>
                                 </li>
                                 {% elif user.userregister %}

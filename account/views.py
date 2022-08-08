@@ -313,7 +313,7 @@ def signin(request):
                     pass
                 try:
                     if Lab.objects.get(user=user):
-                        print("hiilab")
+                        print("hii")
                         active=Lab.objects.all().filter(user_id=user.id,status_appruval=True)
                         if active:
                             login(request,user)

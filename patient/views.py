@@ -89,7 +89,7 @@ def complaint_pass_dmo(request,id):
 
 
 def chat(request):
-    p=PatientStatus.objects.get(patient__adhar=request.user.patient_register.adhar)
+    #p=PatientStatus.objects.get(patient__adhar=request.user.patient_register.adhar)
     if request.method=='POST':
         form=ChatForm(request.POST)
         if form.is_valid():
@@ -97,7 +97,7 @@ def chat(request):
             user.save()
             p_form=form.save()
             p_form.user=user
-            p_form.center=p.center
+           # p_form.center=p.center
             p_form.save()
             messages.success(request,'successfully added')
             return redirect('dashboard')
