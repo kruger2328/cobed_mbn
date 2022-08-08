@@ -40,6 +40,7 @@ class LabAdmin(admin.ModelAdmin):
 admin.site.register(Lab,LabAdmin)
 
 
+
 class HomeAdmin(admin.ModelAdmin):
     list_display=['user','name','authority_type','authority_name','ward_no','status_appruval']
 admin.site.register(Home,HomeAdmin)

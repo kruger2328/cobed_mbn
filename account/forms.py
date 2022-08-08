@@ -208,7 +208,7 @@ class LabFormHospital(forms.ModelForm):
     lab_type=forms.ChoiceField(choices=lab_type)
     class Meta:
         model=Lab
-        fields=('lab_type','center','lab_certificate','lab_avilability','phonenumber','lab_pincode')
+        fields=('lab_type','center','lab_certificate','lab_avilability','phonenumber','lab_pincode','lab_name','loaction','lab_district')
 
 
 class AdminCenterProfileForm(forms.ModelForm):
