@@ -330,7 +330,7 @@
 
                                             <li><a href="{% url 'newpatienthome' %}">Add Home patients</a> </li>    
 
-                                            <li><a href="{% url 'home_view_patients' %}">Patient List</a> </li>    
+                                            <li><a href="{% url 'home:home_view_patients' %}">Patient List</a> </li>    
                                         </ul>
                                 </li>
 
@@ -349,7 +349,7 @@
                                         <span>Complaints</span></a>
                                         <ul class="sub-menu-list">
 
-                                            <li><a href="{% url 'home_view_complaint' %}">View Complaints</a> </li>    
+                                            <li><a href="{% url 'patient:home_view_complaint' %}">View Complaints</a> </li>    
                                         </ul>
                                 </li>
 
@@ -511,7 +511,7 @@
                                     <a href="#"><i class="lnr lnr-cog"></i>
                                         <span>Complaint Box</span></a>
                                         <ul class="sub-menu-list">
-                                            <li><a href="{% url 'dmo_view_complaint' %}">Compliant not solving</a> </li>
+                                            <li><a href="{% url 'patient:dmo_view_complaint' %}">Compliant not solving</a> </li>
                                             
 
                                         </ul>
@@ -537,7 +537,7 @@
                                         <ul class="sub-menu-list">
                                             <li><a href="{% url 'view_my_chat' %}">Chat View</a> </li>
                                             <li><a href="{% url 'chat' %}">Chat With Patients</a> </li>
-                                            <li><a href="{% url 'chat_replay_view' %}"> Replay View</a></li>
+                                            <li><a href="{% url 'patient:chat_replay_view' %}"> Replay View</a></li>
                                         </ul>
                                 </li>
                                 <li class="menu-list">
@@ -556,7 +556,7 @@
                                     <a href="#"><i class="lnr lnr-cog"></i>
                                         <span>Patients</span></a>
                                         <ul class="sub-menu-list">
-                                            <li><a href="{% url 'view_all_patients' %}">View Patients</a> </li>
+                                            <li><a href="{% url 'patient:view_all_patients' %}">View Patients</a> </li>
                                             
                                         </ul>
                                 </li>
