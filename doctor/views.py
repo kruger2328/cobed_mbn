@@ -63,16 +63,17 @@ def approved_deaths(request):
 
 def chat(request):
     #print(request.user.doctor.center)
-    patient=Patient.objects.all()
+    patient=Patient_Register.objects.all()
     chat=Chat.objects.all()
     print(chat)
     #print(patients)
     if request.method=="POST":
         patient=request.POST.get('patient')
         chat=request.POST.get('chat')
-        patient=PatientStatus.objects.get(patient=patient)
+        #user=Chat.objects.get(user=user)
         chat=Chat.objects.create(
-            patient=patient,
+            #patient=patient,
+            # user = user,
             doubts=chat,
             user=request.user
              )
