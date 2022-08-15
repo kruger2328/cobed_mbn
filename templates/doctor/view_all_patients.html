@@ -11,11 +11,11 @@
                                   <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Gender</th>
+                                    
                                    
-                                     <th>Phone</th>
+                                    
                                      <th>Adhar</th>
-                                     <th>Patient Status</th>
+                                     
                                      <th>pincode</th> 
                                        
                                     
@@ -24,26 +24,26 @@
                                   
                                 </thead>
                                 <tbody>
-                                  {% if patients %}
+                                  
 
                                     {% for l in patients %}
                                   <tr class="active">
                                       <td class="serial">{{ forloop.counter }}</td>
-                                      {% if l.patient.name %}
-                                      <td>{{l.patient.name}}</td>
-                                      {% else %}
-                                      <td>{{l.name}}</td>
-                                      {% endif %}
-                                      <td>{{l.gender}}</td>
+                                     
+                                      <td>{{l.user}}</td>
+                                     
+                                      
+                                      
+                                   
                                      
                                      
-                                      <td>{{l.phone}}</td>
+                                      
                                       {% if l.patient.adhar %}
                                       <td>{{l.patient.adhar}}</td>
                                       {% else %}
                                       <td>{{l.adhar}}</td>
                                       {% endif %}
-                                      <td>{{l.patient_status}}</td>
+                                      
                                       <td>{{l.pincode}}</td>
                                       
                                      
@@ -52,10 +52,10 @@
                                 </tr>
                                   {% endfor %}
                                   </tbody>
-                                  {% else %}
+                                 
                                   <br>
                                   <h2>No List Added</h2>
-                                  {% endif %}
+                                  
                               </table>
 					   </div>
 					   

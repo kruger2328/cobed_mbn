@@ -372,17 +372,7 @@
                                         </ul>
                                 </li>
 
-                                <li class="menu-list">
-                                    <a href="#"><i class="lnr lnr-menu"></i>
-                                        <span>Chat </span></a>
-                                        <ul class="sub-menu-list">
-                                            <li><a href="{% url 'patient:chat' %}">Chat With Doctor</a> </li>    
-                                            <li><a href="{% url 'patient:chat_replay_view' %}">View My Chats</a> </li>    
-
-                                            <!-- <li><a href="">Details</a> </li>     -->
-                                        </ul>
-                                </li>
-                                
+                        
                                 
                                 <li class="menu-list">
                                     <a href="#"><i class="lnr lnr-cog"></i>
@@ -393,14 +383,7 @@
                                         </ul>
                                 </li>
 
-                                <li class="menu-list">
-                                    <a href="#"><i class="lnr lnr-cog"></i>
-                                        <span>Chat Box</span></a>
-                                        <ul class="sub-menu-list">
-                                            <li><a href="{% url 'patient:chat' %}">Chat with Doctor</a> </li>
-                                            <li><a href="{% url 'patient:chat_replay_view' %}"> Replay View</a></li>
-                                        </ul>
-                                </li>
+                          
                                 <li class="menu-list">
                                     <a href="#"><i class="lnr lnr-cog"></i>
                                         <span>Update</span></a>
@@ -408,6 +391,7 @@
                                             <li><a href="{% url 'patient:update' %}">Update details</a> </li>
                                         </ul>
                                 </li>
+                                
                                 {% elif user.userregister %}
                                 <li class="menu-list">
                                     <a href="#"><i class="lnr lnr-menu"></i>
@@ -535,11 +519,10 @@
                                     <a href="#"><i class="lnr lnr-cog"></i>
                                         <span>Chat Box</span></a>
                                         <ul class="sub-menu-list">
-                                            <li><a href="{% url 'view_my_chat' %}">Chat View</a> </li>
-                                            <li><a href="{% url 'chat' %}">Chat With Patients</a> </li>
-                                            <li><a href="{% url 'patient:chat_replay_view' %}"> Replay View</a></li>
+                                            <li><a href="https://dashboard.kommunicate.io/">Chat</a> </li>
+                                           
                                         </ul>
-                                </li>
+                                </li> 
                                 <li class="menu-list">
                                     <a href="#"><i class="lnr lnr-cog"></i>
                                         <span>Death</span></a>

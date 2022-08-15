@@ -192,5 +192,5 @@ def view_details(request):
 
 
 def view_all_patients(request):
-    patients=Patient.objects.all()
+    patients=Patient_Register.objects.all()
     return render(request,'doctor/view_all_patients.html',{'patients':patients})
