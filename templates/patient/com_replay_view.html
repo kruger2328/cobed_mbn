@@ -30,7 +30,7 @@
                                         {% else %}
                                         <td>{{l.replay}}</td>
                                         {% endif %}
-                                        <td><a href="{% url 'complaint_pass_dmo' l.id %}">Pass to DMO</a></td>
+                                        <td><a href="{% url 'patient:complaint_pass_dmo' l.id %}">Pass to DMO</a></td>
                                         <!-- <td>{{l.created_date}}</td> -->
                                         <!-- <td>{{l.replay_date}}</td> -->
         

@@ -6,10 +6,10 @@
     <form action="" method="POST" style="font-size: 1.2em;"> 
         {% csrf_token %}
         <label for="patient">Choose a patient:</label>
-
+        
         <select name="patient" id="patient">
-            {% for i in patients %}
-        <option value="{{i.id}}">{{i.patient}}</option>
+            {% for i in chat %}
+        <option value="{{i.id}}">{{i.user}}</option>
         {% endfor %}
         
         </select><br>

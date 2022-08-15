@@ -62,9 +62,11 @@ def approved_deaths(request):
 
 
 def chat(request):
-    print(request.user.doctor.center)
-    patients=PatientStatus.objects.filter(center=request.user.doctor.center)
-    print(patients)
+    #print(request.user.doctor.center)
+    patient=Patient.objects.all()
+    chat=Chat.objects.all()
+    print(chat)
+    #print(patients)
     if request.method=="POST":
         patient=request.POST.get('patient')
         chat=request.POST.get('chat')
@@ -73,11 +75,10 @@ def chat(request):
             patient=patient,
             doubts=chat,
             user=request.user
-
-        )
+             )
         chat.save
         return redirect('view_my_chat')
-    return render(request,'doctor/chat.html',{'patients':patients})
+    return render(request,'doctor/chat.html',{"chat":patient})
 
 
 def view_my_chat(request):
