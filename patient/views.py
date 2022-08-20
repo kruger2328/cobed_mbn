@@ -161,7 +161,7 @@ def dmo_view_complaint(request):
 
 
 def home_view_complaint(request):
-    complaints=Complaint.objects.filter(home=request.user.home)
+    complaints=Complaint.objects.all()
     return render(request,'patient/home_view_complaint.html',{'com':complaints})
 from account.forms import UpdateProfileForm 
 def update_profile_center(request):
